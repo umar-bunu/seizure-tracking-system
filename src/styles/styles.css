@@ -2,6 +2,7 @@
 .dashBoard__mainDiv {
   margin-top: 150px;
   text-align: center;
+  background-color: rgb(29, 28, 28);
 }
 
 .h2__header {
@@ -17,19 +18,20 @@
 }
 .dashboard__table > div {
   width: fit-content;
-  border: 1px solid black;
+  border: 1px solid white;
   height: inherit;
   overflow-y: scroll;
   padding: 5px;
-  background-color: antiquewhite;
+  background-color: rgb(29, 28, 28);
 }
 .dashboard__tr__select {
-  background-color: rgb(230, 215, 196);
+  background-color: rgb(29, 28, 28);
   cursor: pointer;
   padding: 5px;
 }
 .dashboard__tr__select:hover {
-  background-color: rgb(250, 195, 124);
+  background-color: white;
+  color: rgb(29, 28, 28);
 }
 .dashboard__table > div > table > tbody > tr > td {
   margin-top: 10px;
@@ -60,7 +62,8 @@
   overflow-y: scroll;
   width: 500px;
   height: 70vh;
-  background-color: rgb(252, 252, 253);
+
+  background-color: rgb(29, 28, 28);
 
   padding: 10px;
 }
@@ -74,6 +77,13 @@
   margin-right: auto;
   padding: 5px;
   margin-bottom: 50px;
+  line-height: 34px;
+}
+.showSelectedItem__deleteItem:hover {
+  background-color: white;
+  color: rgb(29, 28, 28);
+
+  border-radius: 5px;
 }
 .showSelectedItem__h1Tag {
   width: min-content;
@@ -84,7 +94,8 @@
 }
 .showSelectedItem__h1Tag:hover {
   border-radius: 50%;
-  background-color: rgb(223, 220, 218);
+  color: rgb(29, 28, 28);
+  background-color: white;
 }
 .showSelectedItemSectionDiv {
   display: flex;
@@ -93,19 +104,29 @@
 }
 .showSelectedItemSingleItem {
   height: 28px;
-  margin: 5px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   width: 100%;
-  text-align: justify;
+  justify-content: center;
+  display: flex;
 }
 .showSelectedItemSingleItem > label {
-  width: 500px;
-  overflow-x: hidden;
+  width: 160px !important;
+  overflow: hidden;
+  text-align: right;
+  margin-right: 5px;
 }
 .showSelectedItemPictureDiv {
   overflow-x: scroll;
-  height: 160px;
+  height: 190px;
   width: inherit;
   text-align: justify;
+}
+.showSelectedItemPictureDiv > h5 {
+  margin: 5px;
+  padding: 2px;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 .showSelectedItemCancelSave {
   height: 28px;
@@ -138,8 +159,29 @@
 
 /* Login */
 
-.loginForm {
-  margin-top: 144px;
+.mainDiv {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.loginForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 400px;
+}
+.loginForm > label {
+  margin-top: 10px;
+}
+.loginForm > input {
+  height: 24px;
+  font-size: 18px;
+}
+.loginForm > button {
+  margin-top: 15px;
+  padding: 10px;
 }

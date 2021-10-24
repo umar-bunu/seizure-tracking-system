@@ -7,7 +7,20 @@
   height: 100px;
   align-items: center;
   width: 100%;
-  background-color: antiquewhite;
+  background-color: rgb(7, 7, 7);
+}
+.headerDiv > button {
+  background-color: rgb(42, 42, 43);
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.headerDiv > button:hover {
+  color: rgb(42, 42, 43);
+
+  background-color: white;
 }
 
 .footerDiv {

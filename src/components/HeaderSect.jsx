@@ -15,14 +15,15 @@ function HeaderSect() {
       >
         Home
       </button>
-
-      <button
-        onClick={() => {
-          history.push("/dashboard");
-        }}
-      >
-        dashboard
-      </button>
+      {getAuth().currentUser != null && !loading && (
+        <button
+          onClick={() => {
+            history.push("/dashboard");
+          }}
+        >
+          dashboard
+        </button>
+      )}{" "}
       <button
         onClick={async () => {
           if (getAuth().currentUser != null) {

@@ -2,7 +2,6 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import "./App.css";
-import FooterSect from "./components/FooterSect";
 import HeaderSect from "./components/HeaderSect";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
@@ -39,7 +38,6 @@ function App() {
         )}
         <Route path="/login" render={(props) => <Login />} />
       </Switch>
-      <FooterSect className="footer__sect" />
     </div>
   );
 }

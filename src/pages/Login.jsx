@@ -23,7 +23,8 @@ function Login() {
   };
   return (
     <div className="mainDiv">
-      <h2>Welcome back, Please sign in to continue</h2>
+      <h1>Welcome back</h1>
+      <h2>Please sign in to continue</h2>
       <form onSubmit={handleSubmit} className="loginForm">
         <label htmlFor="userEmail">Email: </label>
         <input required type="email" name="userEmail" />

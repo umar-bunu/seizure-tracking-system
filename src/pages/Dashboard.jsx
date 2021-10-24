@@ -59,7 +59,7 @@ function Dashboard() {
           add new seized item
         </button>
         {seizedItems == null ? (
-          "Loading..."
+          <div className="dashboard__table">"Loading..."</div>
         ) : (
           <div className="dashboard__table">
             <div>
@@ -82,7 +82,15 @@ function Dashboard() {
                       className="dashboard__tr__select"
                       key={eachItem.id}
                     >
-                      <td>{eachItem.id}</td>
+                      <td
+                        style={{
+                          maxWidth: "80px",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                        }}
+                      >
+                        {eachItem.id}
+                      </td>
                       <td>{eachItem.data.itemName}</td>
                       <td>{eachItem.data.category}</td>
                       <td>{eachItem.data.importerName}</td>

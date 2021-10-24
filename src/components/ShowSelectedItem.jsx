@@ -104,7 +104,7 @@ function ShowSelectedItem({ selectedItem, setselectedItem }) {
             />
           </div>
           <div className="showSelectedItemSingleItem">
-            <label htmlFor="quantity">Quantity(number, unit): </label>
+            <label htmlFor="quantity">Quantity: </label>
             <input
               name="quantity"
               defaultValue={selectedItem.data.quantity}

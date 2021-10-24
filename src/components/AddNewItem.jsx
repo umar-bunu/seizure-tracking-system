@@ -59,7 +59,7 @@ function AddNewItem({ setshowAddNewItem }) {
             <input name="importerName" type="text" ref={importerNameREf} />
           </div>
           <div className="showSelectedItemSingleItem">
-            <label htmlFor="quantity">Quantity(number, unit): </label>
+            <label htmlFor="quantity">Quantity: </label>
             <input name="quantity" type="text" ref={quantityRef} />
           </div>
           <div className="showSelectedItemSingleItem">
