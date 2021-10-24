@@ -55,6 +55,9 @@
 /*ShowSelectedItem*/
 
 .showSelectedItem__mainDiv {
+  width: 100%;
+  max-width: 200px;
+
   background-color: transparent;
   position: fixed;
 }
@@ -69,7 +72,7 @@
 }
 .showSelectedItem__headerDiv {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
 .showSelectedItem__deleteItem {
   width: fit-content;
@@ -167,7 +170,7 @@
   height: 100vh;
 }
 .loginForm {
-  margin-top: 20px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
