@@ -15,7 +15,7 @@ function Login() {
         e.target.userEmail.value,
         e.target.userPassword.value
       );
-      history.push("/");
+      history.push("/dashboard");
     } catch (exception) {
       alert("error");
       console.log(exception);
