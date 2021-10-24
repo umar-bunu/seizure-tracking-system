@@ -49,7 +49,15 @@ function Dashboard() {
         )}
       </div>
       <div className="seizedItems">
-        <h2 className="h2_header">Siezed Items</h2>
+        <h2 className="h2_header">Seized Items</h2>
+        <button
+          onClick={() => {
+            setshowAddNewItem(true);
+          }}
+          className="dashboard__addNewSeizedItem"
+        >
+          add new seized item
+        </button>
         {seizedItems == null ? (
           "Loading..."
         ) : (
@@ -89,14 +97,6 @@ function Dashboard() {
           </div>
         )}
       </div>
-      <button
-        onClick={() => {
-          setshowAddNewItem(true);
-        }}
-        className="dashboard__addNewSeizedItem"
-      >
-        add new seized item
-      </button>
     </div>
   );
 }
