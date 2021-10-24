@@ -8,8 +8,7 @@ function FooterSect() {
   return (
     <div className="footerDiv">
       <div>Home</div>
-      <div>profile</div>
-      <div>dashboard</div>
+      <button>dashboard</button>
       <div>{user && !loading ? "Log out" : "Login"}</div>
     </div>
   );
