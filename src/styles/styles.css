@@ -1,0 +1,145 @@
+/* dashboard */
+.dashBoard__mainDiv {
+  margin-top: 150px;
+  text-align: center;
+}
+
+.h2__header {
+  font-weight: normal;
+}
+.dashboard__table {
+  text-align: center;
+  height: 400px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.dashboard__table > div {
+  width: fit-content;
+  border: 1px solid black;
+  height: inherit;
+  overflow-y: scroll;
+  padding: 5px;
+  background-color: antiquewhite;
+}
+.dashboard__tr__select {
+  background-color: rgb(230, 215, 196);
+  cursor: pointer;
+  padding: 5px;
+}
+.dashboard__tr__select:hover {
+  background-color: rgb(250, 195, 124);
+}
+.dashboard__table > div > table > tbody > tr > td {
+  margin-top: 10px;
+}
+
+.dashBoard__selectedItemDiv {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.dashboard__addNewSeizedItem {
+  margin: 20px;
+  background-color: rgb(229, 250, 215);
+  font-size: 18px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*ShowSelectedItem*/
+
+.showSelectedItem__mainDiv {
+  background-color: transparent;
+  position: fixed;
+}
+.showSelectedItem__bodyDiv {
+  overflow-y: scroll;
+  width: 500px;
+  height: 70vh;
+  background-color: rgb(252, 252, 253);
+
+  padding: 10px;
+}
+.showSelectedItem__headerDiv {
+  display: flex;
+  justify-content: space-around;
+}
+.showSelectedItem__deleteItem {
+  width: fit-content;
+  cursor: pointer;
+  margin-right: auto;
+  padding: 5px;
+  margin-bottom: 50px;
+}
+.showSelectedItem__h1Tag {
+  width: min-content;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 5px;
+  margin-bottom: 50px;
+}
+.showSelectedItem__h1Tag:hover {
+  border-radius: 50%;
+  background-color: rgb(223, 220, 218);
+}
+.showSelectedItemSectionDiv {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+.showSelectedItemSingleItem {
+  height: 28px;
+  margin: 5px;
+  width: 100%;
+  text-align: justify;
+}
+.showSelectedItemSingleItem > label {
+  width: 500px;
+  overflow-x: hidden;
+}
+.showSelectedItemPictureDiv {
+  overflow-x: scroll;
+  height: 160px;
+  width: inherit;
+  text-align: justify;
+}
+.showSelectedItemCancelSave {
+  height: 28px;
+  margin-right: 5px;
+  width: 100%;
+  text-align: right;
+  padding: 10px;
+}
+
+.cancelBtn {
+  font-size: 17px;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+}
+.submitBtn {
+  font-size: 17px;
+  cursor: pointer;
+  background-color: rgb(44, 149, 247);
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+/* Login */
+
+.loginForm {
+  margin-top: 144px;
+  display: flex;
+  flex-direction: column;
+}
