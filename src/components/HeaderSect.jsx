@@ -21,9 +21,8 @@ function HeaderSect() {
         onClick={async () => {
           if (getAuth().currentUser != null) {
             await getAuth().signOut();
-          } else {
-            history.push("/");
           }
+          history.push("/");
         }}
       >
         {getAuth().currentUser != null && !loading ? "Log out" : "Login"}
