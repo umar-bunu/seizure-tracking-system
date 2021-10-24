@@ -97,7 +97,7 @@ function AddNewItem({ setshowAddNewItem }) {
                     time: `${timeState.getDate()}-${timeState.getMonth()}-${timeState.getFullYear()}`,
                     pictures: [],
                   });
-                  alert(doc.id);
+
                   setselectedItem({ id: doc.id });
                   setisLoading(false);
                   alert("success!!! Document created.");

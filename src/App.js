@@ -10,7 +10,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 import { getAuth } from "firebase/auth";
 import { initializeApp } from "firebase/app";
-import Home from "./pages/Home";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -32,11 +31,10 @@ function App() {
     <div className="main__div">
       <HeaderSect className="header__sect" />
       <Switch>
-        <Route exact path="/" render={(props) => <Home />} />
+        <Route exact path="/" render={(props) => <Login />} />
         {user && !loading && (
           <Route path="/dashboard" render={(props) => <Dashboard />} />
         )}
-        <Route path="/login" render={(props) => <Login />} />
       </Switch>
     </div>
   );

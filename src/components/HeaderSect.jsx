@@ -8,13 +8,6 @@ function HeaderSect() {
   const history = useHistory();
   return (
     <div className="headerDiv">
-      <button
-        onClick={() => {
-          history.push("/");
-        }}
-      >
-        Home
-      </button>
       {getAuth().currentUser != null && !loading && (
         <button
           onClick={() => {
@@ -29,7 +22,7 @@ function HeaderSect() {
           if (getAuth().currentUser != null) {
             await getAuth().signOut();
           } else {
-            history.push("/login");
+            history.push("/");
           }
         }}
       >
