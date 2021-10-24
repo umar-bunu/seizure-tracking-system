@@ -29,7 +29,6 @@ function App() {
   const [user, loading, error] = useAuthState(getAuth());
   return (
     <div className="main__div">
-      <HeaderSect className="header__sect" />
       <Switch>
         <Route exact path="/" render={(props) => <Login />} />
         {user && !loading && (

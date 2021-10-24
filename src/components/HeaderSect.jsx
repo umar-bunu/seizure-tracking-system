@@ -8,15 +8,6 @@ function HeaderSect() {
   const history = useHistory();
   return (
     <div className="headerDiv">
-      {getAuth().currentUser != null && !loading && (
-        <button
-          onClick={() => {
-            history.push("/dashboard");
-          }}
-        >
-          dashboard
-        </button>
-      )}{" "}
       <button
         onClick={async () => {
           if (getAuth().currentUser != null) {
