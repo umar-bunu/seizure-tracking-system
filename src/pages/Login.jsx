@@ -19,7 +19,7 @@ function Login() {
       );
       history.push("/dashboard");
     } catch (exception) {
-      alert("error");
+      alert("error " + exception.code);
       console.log(exception);
     }
   };
