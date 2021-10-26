@@ -24,17 +24,17 @@
 
   background-color: white;
 }
-
-.footerDiv {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  background-color: antiquewhite;
-  padding: 10px;
+.login__showPassword {
+  margin-top: 10px;
+  color: white;
+  background-color: inherit;
+  padding: 5px;
+  border: 1px solid white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
 }
-
 @media screen and (max-width: 700px) {
   .headerDiv {
     flex-direction: column;

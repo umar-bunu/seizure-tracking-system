@@ -188,3 +188,50 @@
   margin-top: 15px;
   padding: 10px;
 }
+
+/* showPassword */
+.showPassword__mainDiv {
+  height: fit-content;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+
+  padding: 10px;
+  padding-bottom: 20px;
+  border: 1px solid white;
+  background-color: rgb(29, 28, 28);
+  color: white;
+  border-radius: 5px;
+
+  width: 100%;
+  max-width: 500px;
+  font-size: 17px;
+}
+.showPassword__mainDiv > * {
+  margin: 5px;
+}
+
+.showPasswordHeaderDiv {
+  text-align: right;
+}
+
+.showPassword__h1Tag {
+  background-color: transparent;
+  width: min-content;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 5px;
+
+  color: white;
+  border: none;
+  font-size: 15px;
+}
+.showPassword__h1Tag:hover {
+  border-radius: 50%;
+  color: rgb(29, 28, 28);
+  background-color: white;
+}
+
+.showPassword__submitBtn {
+  font-size: 17px;
+}
