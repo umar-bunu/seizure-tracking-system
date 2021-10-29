@@ -10,10 +10,12 @@ import {
 import ShowSelectedItem from "../components/ShowSelectedItem";
 import AddNewItem from "../components/AddNewItem";
 import HeaderSect from "../components/HeaderSect";
+import CreateNewUser from "../components/CreateNewUser";
 function Dashboard() {
   const [seizedItems, setseizedItems] = useState(null);
   const [selectedItem, setselectedItem] = useState(null);
   const [showAddNewItem, setshowAddNewItem] = useState(false);
+  const [showCreateNewUser, setshowCreateNewUser] = useState(null);
   const getSeizedItems = async () => {
     try {
       const db = getFirestore();
@@ -38,77 +40,87 @@ function Dashboard() {
   }, []);
   return (
     <div>
-      <HeaderSect className="header__sect" />
+      <HeaderSect
+        setshowCreateNewUser={setshowCreateNewUser}
+        className="header__sect"
+      />
       <div className="dashBoard__mainDiv">
-        <div className="dashBoard__selectedItemDiv">
-          {showAddNewItem && (
-            <AddNewItem setshowAddNewItem={setshowAddNewItem} />
-          )}
-        </div>
-        <div className="dashBoard__selectedItemDiv">
-          {selectedItem && (
-            <ShowSelectedItem
-              selectedItem={selectedItem}
-              setselectedItem={setselectedItem}
-            />
-          )}
-        </div>
-        <div className="seizedItems">
-          <h2 className="h2_header">Seized Items</h2>
-          <button
-            onClick={() => {
-              setshowAddNewItem(true);
-            }}
-            className="dashboard__addNewSeizedItem"
-          >
-            add new seized item
-          </button>
-          {seizedItems == null ? (
-            <div className="dashboard__table">"Loading..."</div>
-          ) : (
-            <div className="dashboard__table">
-              <div>
-                <table>
-                  <tbody>
-                    <tr>
-                      <th>ID</th>
-                      <th>Item name</th>
-                      <th>Category</th>
-                      <th>Importer</th>
-                      <th>Contact</th>
-                      <th>Date Seized</th>
-                      <th>Quantity</th>
-                    </tr>
-                    {seizedItems.map((eachItem) => (
-                      <tr
-                        onClick={() => {
-                          setselectedItem(eachItem);
-                        }}
-                        className="dashboard__tr__select"
-                        key={eachItem.id}
-                      >
-                        <td
-                          style={{
-                            maxWidth: "80px",
-                            overflow: "hidden",
-                            textOverflow: "ellipsis",
-                          }}
-                        >
-                          {eachItem.id}
-                        </td>
-                        <td>{eachItem.data.itemName}</td>
-                        <td>{eachItem.data.category}</td>
-                        <td>{eachItem.data.importerName}</td>
-                        <td>{eachItem.data.importerContact}</td>
-                        <td>{`${eachItem.data.time}`}</td>
-                        <td>{eachItem.data.quantity}</td>
+        <div className="dashboard__bodyDiv">
+          <div className="dashBoard__selectedItemDiv">
+            {showAddNewItem && (
+              <AddNewItem setshowAddNewItem={setshowAddNewItem} />
+            )}
+          </div>
+          <div className="dashBoard__selectedItemDiv">
+            {showCreateNewUser && (
+              <CreateNewUser setshowCreateNewUser={setshowCreateNewUser} />
+            )}
+          </div>
+          <div className="dashBoard__selectedItemDiv">
+            {selectedItem && (
+              <ShowSelectedItem
+                selectedItem={selectedItem}
+                setselectedItem={setselectedItem}
+              />
+            )}
+          </div>
+          <div className="seizedItems">
+            <h2 className="h2_header">Seized Items</h2>
+            <button
+              onClick={() => {
+                setshowAddNewItem(true);
+              }}
+              className="dashboard__addNewSeizedItem"
+            >
+              Add new seized item
+            </button>
+            {seizedItems == null ? (
+              <div className="dashboard__table">"Loading..."</div>
+            ) : (
+              <div className="dashboard__table">
+                <div>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th>ID</th>
+                        <th>Item name</th>
+                        <th>Category</th>
+                        <th>Importer</th>
+                        <th>Contact</th>
+                        <th>Date Seized</th>
+                        <th>Quantity</th>
                       </tr>
-                    ))}{" "}
-                  </tbody>
-                </table>
+                      {seizedItems.map((eachItem) => (
+                        <tr
+                          onClick={() => {
+                            setselectedItem(eachItem);
+                          }}
+                          className="dashboard__tr__select"
+                          key={eachItem.id}
+                        >
+                          <td
+                            style={{
+                              maxWidth: "80px",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                            }}
+                          >
+                            {eachItem.id}
+                          </td>
+                          <td>{eachItem.data.itemName}</td>
+                          <td>{eachItem.data.category}</td>
+                          <td>{eachItem.data.importerName}</td>
+                          <td>{eachItem.data.importerContact}</td>
+                          <td>{`${eachItem.data.time}`}</td>
+                          <td>{eachItem.data.quantity}</td>
+                        </tr>
+                      ))}{" "}
+                    </tbody>
+                  </table>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </div>

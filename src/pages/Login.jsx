@@ -8,7 +8,7 @@ import ShowPasswordReset from "../components/ShowPasswordReset";
 function Login() {
   const [user, loading, error] = useAuthState(getAuth());
   const history = useHistory();
-  const [shouldShowPasswordReset, setshouldShowPasswordReset] = useState(true);
+  const [shouldShowPasswordReset, setshouldShowPasswordReset] = useState(false);
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -24,7 +24,7 @@ function Login() {
     }
   };
   return (
-    <div className="mainDiv">
+    <div className={shouldShowPasswordReset ? "mainDivHidden" : "mainDiv"}>
       {shouldShowPasswordReset && (
         <ShowPasswordReset
           setshouldShowPasswordReset={setshouldShowPasswordReset}

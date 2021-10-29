@@ -112,8 +112,8 @@ function AddNewItem({ setshowAddNewItem }) {
               Save
             </button>
           </div>
-          <div className="showSelectedItemPictureDiv">
-            <h6>
+          <div>
+            <h6 className="AddItemPictureSection">
               Pictures:{" "}
               <input
                 multiple

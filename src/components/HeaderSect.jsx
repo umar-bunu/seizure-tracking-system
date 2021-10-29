@@ -3,11 +3,18 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory } from "react-router-dom";
 import "../styles/LayoutStyles.css";
 import { getAuth } from "firebase/auth";
-function HeaderSect() {
+function HeaderSect({ setshowCreateNewUser }) {
   const [user, loading, error] = useAuthState(getAuth());
   const history = useHistory();
   return (
     <div className="headerDiv">
+      <button
+        onClick={() => {
+          setshowCreateNewUser(true);
+        }}
+      >
+        Create New User
+      </button>
       <button
         onClick={async () => {
           if (getAuth().currentUser != null) {

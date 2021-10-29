@@ -1,6 +1,5 @@
 /* dashboard */
 .dashBoard__mainDiv {
-  margin-top: 150px;
   text-align: center;
   background-color: rgb(29, 28, 28);
 }
@@ -8,10 +7,14 @@
 .h2__header {
   font-weight: normal;
 }
+.dashboard__bodyDiv {
+  margin-top: 150px;
+}
 .dashboard__table {
   text-align: center;
-  height: 400px;
-
+  height: 50vh;
+  width: 100vw;
+  max-height: 400px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -35,6 +38,8 @@
 }
 .dashboard__table > div > table > tbody > tr > td {
   margin-top: 10px;
+  width: fit-content;
+  font-size: 15px;
 }
 
 .dashBoard__selectedItemDiv {
@@ -43,7 +48,10 @@
   justify-content: center;
 }
 .dashboard__addNewSeizedItem {
-  margin: 20px;
+  text-align: center;
+  margin: 20px 0px;
+  width: 100%;
+  max-width: 400px;
   background-color: rgb(229, 250, 215);
   font-size: 18px;
   padding: 5px;
@@ -55,16 +63,30 @@
 /*ShowSelectedItem*/
 
 .showSelectedItem__mainDiv {
-  width: 100%;
-  max-width: 200px;
-
   background-color: transparent;
   position: fixed;
+  padding: 0px;
 }
+
 .showSelectedItem__bodyDiv {
+  border: 1px solid rgb(131, 130, 130);
+  border-radius: 5px;
   overflow-y: scroll;
-  width: 500px;
+  width: fit-content;
+  max-width: 500px;
   height: 70vh;
+
+  background-color: rgb(29, 28, 28);
+
+  padding: 10px;
+}
+.createNewUser__bodyDiv {
+  border: 1px solid rgb(131, 130, 130);
+  border-radius: 5px;
+
+  width: fit-content;
+  max-width: 500px;
+  height: fit-content;
 
   background-color: rgb(29, 28, 28);
 
@@ -119,10 +141,25 @@
   text-align: right;
   margin-right: 5px;
 }
+.CreateNewUserSingleItem {
+  height: 28px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.CreateNewUserSingleItem > label {
+  width: 100px !important;
+  overflow: hidden;
+  text-align: right;
+  margin-right: 5px;
+}
 .showSelectedItemPictureDiv {
   overflow-x: scroll;
   height: 190px;
-  width: inherit;
+  width: fit-content;
   text-align: justify;
 }
 .showSelectedItemPictureDiv > h5 {
@@ -131,6 +168,13 @@
   border: 1px solid white;
   border-radius: 5px;
 }
+.AddItemPictureSection {
+  margin: 5px;
+  padding: 2px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
 .showSelectedItemCancelSave {
   height: 28px;
   margin-right: 5px;
@@ -162,12 +206,20 @@
 
 /* Login */
 
-.mainDiv {
+.mainDiv,
+.mainDivHidden {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+.mainDiv > h2 {
+  margin-top: 10px;
+  text-align: center;
+}
+.mainDivHidden > * {
+  display: none;
 }
 .loginForm {
   margin-top: 40px;
@@ -234,4 +286,21 @@
 
 .showPassword__submitBtn {
   font-size: 17px;
+}
+
+.createNewUserSaveBtn {
+  width: 100%;
+  padding: 2.5px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 2px;
+  font-size: 16px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.createNewUserSaveBtn:hover {
+  background-color: white;
+  color: rgb(29, 28, 28);
 }
