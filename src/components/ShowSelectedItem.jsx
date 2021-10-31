@@ -113,11 +113,9 @@ function ShowSelectedItem({ selectedItem, setselectedItem }) {
             />
           </div>
           <div className="showSelectedItemSingleItem">
-            <label htmlFor="dateChange">
-              Date:{" "}
-              {`${timeState.getDate()}/${timeState.getMonth()}/${timeState.getFullYear()}`}{" "}
-              &nbsp;
-            </label>
+            Date:{" "}
+            {`${timeState.getDate()}/${timeState.getMonth()}/${timeState.getFullYear()}`}{" "}
+            &nbsp;
             <input
               type="date"
               onChange={(e) => {

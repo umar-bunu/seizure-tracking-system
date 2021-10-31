@@ -39,35 +39,56 @@ function AddNewItem({ setshowAddNewItem }) {
         </div>
         <div className="showSelectedItemSectionDiv">
           <div className="showSelectedItemSingleItem">
-            <label htmlFor="itemName">Item: </label>
-            <input name="itemName" type="text" ref={itemNameRef} />
+            <input
+              placeholder="Item name"
+              name="itemName"
+              type="text"
+              ref={itemNameRef}
+            />
           </div>
           <div className="showSelectedItemSingleItem">
-            <label htmlFor="itemCat">Category: </label>
-            <input name="itemCat" type="text" ref={categoryRef} />
+            <input
+              placeholder="Category"
+              name="itemCat"
+              type="text"
+              ref={categoryRef}
+            />
           </div>
           <div className="showSelectedItemSingleItem">
-            <label htmlFor="importAddr">Importer Address: </label>
-            <input type="text" ref={importerAddressRef} />
+            <input
+              placeholder="Importer Address"
+              type="text"
+              ref={importerAddressRef}
+            />
           </div>
           <div className="showSelectedItemSingleItem">
-            <label htmlFor="ImporterCont">Importer Contact: </label>
-            <input name="importerCont" type="text" ref={importerContactRef} />
+            <input
+              placeholder="Importer Contact"
+              name="importerCont"
+              type="text"
+              ref={importerContactRef}
+            />
           </div>
           <div className="showSelectedItemSingleItem">
-            <label htmlFor="importerName">Importer Name: </label>
-            <input name="importerName" type="text" ref={importerNameREf} />
+            <input
+              placeholder="Importer Name"
+              name="importerName"
+              type="text"
+              ref={importerNameREf}
+            />
           </div>
           <div className="showSelectedItemSingleItem">
-            <label htmlFor="quantity">Quantity: </label>
-            <input name="quantity" type="text" ref={quantityRef} />
+            <input
+              placeholder="Quantity"
+              name="quantity"
+              type="text"
+              ref={quantityRef}
+            />
           </div>
           <div className="showSelectedItemSingleItem">
-            <label htmlFor="dateChange">
-              Date:{" "}
-              {`${timeState.getDate()}/${timeState.getMonth()}/${timeState.getFullYear()}`}{" "}
-              &nbsp;
-            </label>
+            Date:{" "}
+            {`${timeState.getDate()}/${timeState.getMonth()}/${timeState.getFullYear()}`}{" "}
+            &nbsp;
             <input
               type="date"
               onChange={(e) => {
