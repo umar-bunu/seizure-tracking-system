@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import "./App.css";
@@ -10,6 +10,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 import { getAuth } from "firebase/auth";
 import { initializeApp } from "firebase/app";
+import Signup from "./pages/Signup";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -26,6 +27,9 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 function App() {
+  useEffect(() => {
+    document.title = "Seizure Tracking System";
+  }, []);
   const [user, loading, error] = useAuthState(getAuth());
   return (
     <div className="main__div">
@@ -34,6 +38,7 @@ function App() {
         {user && !loading && (
           <Route path="/dashboard" render={(props) => <Dashboard />} />
         )}
+        <Route path="/signup" render={(props) => <Signup />} />
       </Switch>
     </div>
   );

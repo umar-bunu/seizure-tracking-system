@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory } from "react-router-dom";
 
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import "../styles/LoginStyles.css";
 import ShowPasswordReset from "../components/ShowPasswordReset";
-function Login() {
+function Signup() {
   const [user, loading, error] = useAuthState(getAuth());
   const history = useHistory();
-  const [shouldShowPasswordReset, setshouldShowPasswordReset] = useState(null);
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      await signInWithEmailAndPassword(
+      await createUserWithEmailAndPassword(
         getAuth(),
         e.target.userEmail.value,
         e.target.userPassword.value
@@ -24,18 +23,12 @@ function Login() {
     }
   };
   return (
-    <div
-      className={shouldShowPasswordReset == true ? "mainDivHidden" : "mainDiv"}
-    >
-      {shouldShowPasswordReset && (
-        <ShowPasswordReset
-          setshouldShowPasswordReset={setshouldShowPasswordReset}
-        />
-      )}
+    <div className="mainDiv">
       <div className="bodyDiv">
+        {" "}
         <h1>Seizure Tracking System</h1>
-        <h2>Welcome back</h2>
-        <h3>Please sign in to continue</h3>
+        <h2>User Sign up</h2>
+        <h3>Please Fill in the details below</h3>
         <form onSubmit={handleSubmit} className="loginForm">
           <label htmlFor="userEmail">Email: </label>
           <input
@@ -52,29 +45,20 @@ function Login() {
             name="userPassword"
           />
           <button className="login__submitBtn" type="submit">
-            Login
+            Sign up
           </button>
         </form>
         <button
           className="login__showPassword"
           onClick={() => {
-            setshouldShowPasswordReset(true);
+            history.push("/");
           }}
         >
-          Forgot Password? Get Password Reset Link
-        </button>{" "}
-        <br />
-        <button
-          className="login__showPassword"
-          onClick={() => {
-            history.push("signup");
-          }}
-        >
-          New User? Sign up
+          Back to login
         </button>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Signup;

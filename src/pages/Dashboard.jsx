@@ -16,6 +16,7 @@ function Dashboard() {
   const [selectedItem, setselectedItem] = useState(null);
   const [showAddNewItem, setshowAddNewItem] = useState(false);
   const [showCreateNewUser, setshowCreateNewUser] = useState(null);
+  const [showHeader, setshowHeader] = useState(true);
   const getSeizedItems = async () => {
     try {
       const db = getFirestore();
@@ -40,15 +41,21 @@ function Dashboard() {
   }, []);
   return (
     <div>
-      <HeaderSect
-        setshowCreateNewUser={setshowCreateNewUser}
-        className="header__sect"
-      />
+      {showHeader == true && (
+        <HeaderSect
+          id="header__sect"
+          setshowCreateNewUser={setshowCreateNewUser}
+          className="header__sect"
+        />
+      )}
       <div className="dashBoard__mainDiv">
         <div className="dashboard__bodyDiv">
           <div className="dashBoard__selectedItemDiv">
             {showAddNewItem && (
-              <AddNewItem setshowAddNewItem={setshowAddNewItem} />
+              <AddNewItem
+                setshowAddNewItem={setshowAddNewItem}
+                setshowHeader={setshowHeader}
+              />
             )}
           </div>
           <div className="dashBoard__selectedItemDiv">
@@ -59,13 +66,17 @@ function Dashboard() {
           <div className="dashBoard__selectedItemDiv">
             {selectedItem && (
               <ShowSelectedItem
+                setshowHeader={setshowHeader}
                 selectedItem={selectedItem}
                 setselectedItem={setselectedItem}
               />
             )}
           </div>
           <div className="seizedItems">
-            <h2 className="h2_header">Seized Items</h2>
+            <h2 className="h2_header">
+              Seized Items <br /> Below You are the list of seized items in the
+              record
+            </h2>
             <button
               onClick={() => {
                 setshowAddNewItem(true);

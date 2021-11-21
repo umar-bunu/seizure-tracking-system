@@ -1,0 +1,41 @@
+/* Login */
+
+.mainDiv,
+.mainDivHidden {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.bodyDiv > h2,
+h1,
+h3 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.bodyDiv {
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.loginForm {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 400px;
+}
+.loginForm > label {
+  margin-top: 10px;
+}
+.login__input {
+  height: 24px;
+  font-size: 18px;
+}
+.login__submitBtn {
+  margin-top: 15px;
+  padding: 10px;
+}
