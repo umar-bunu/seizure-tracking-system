@@ -15,7 +15,12 @@ function ShowPasswordReset({ setshouldShowPasswordReset }) {
           X
         </button>
       </div>
-      <input placeholder="Enter your email" type="text" ref={userEmail} />
+      <input
+        className="showPassword__input"
+        placeholder="Enter your email"
+        type="text"
+        ref={userEmail}
+      />
       <button
         className="showPassword__submitBtn"
         onClick={async () => {
